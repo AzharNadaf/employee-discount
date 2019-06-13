@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+           
+    <ng-container *ngIf="isShow;else other_content"> 
+<div class="cart section">
+  <div class="container">
+    <div class="g-section">
+      <div class="row">
+        <div class="col">
+          <div class="g-section-title">
+            <h3>Cart</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-9">
+           
+          <div class="row d-flex justify-content-center align-items-center flex-row card" *ngFor="let Product of cartDetails; let i = index">
+            <div class="col-md-3">
+              <div class="c-img">
+                <!-- <img src="/assets/link4.png" /> -->
+                 <img [src]="Product.imagepath " class="img-fluid" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5>
+                <small>
+              {{ Product.categoryname }}
+            </small> {{ Product.productname }}
+              </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="price">
+                <h5>
+                  <small>Price</small> $ {{ Product.productcost }}
+                </h5>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="d-flex justify-content-center">
+                <a class="btn" (click)='deleteid(Product.productid)'>Delete</a>
+              </div>
+            </div>
+          </div>
+          </div>
+         
+        </div>
+        <div class="col-md-3">
+          <div class="summary">
+            <h6 class="text-center">Total Cost</h6>
+            <h2> $ {{totalSum }}</h2>
+            <a [routerLink]="['../checkout']" class="btn btn-success">Proceed to checkout</a>
+          </div>
+
+        </div> 
+
+    </div>
+  </div>
+</div>
+</ng-container>
+ 
+<ng-template #other_content>Please add items in your cart.</ng-template>
+
+<!-- <Button> <a href="/login"></a>Proceed to checkout</Button> -->

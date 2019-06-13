@@ -1,0 +1,51 @@
+<div class="login">
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center no-gutters">
+
+            <div class="col-md-6 d-sm-none d-md-block">
+                <div class="bg-img ">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form [formGroup]="loginForm" class="" (ngSubmit)="onSubmit()">
+                    <div class="d-block text-center logo">
+                        <img src="./assets/Stanley.png" alt="">
+                    </div>
+                    <div class="form-group">
+                        <div class="err-msg text-center">
+                            <p class="text-danger">{{errorMsg}}</p>
+                        </div>
+                    </div>
+
+                    <div class="input-field">
+                        <div class="form-group">
+                            <label for="username" class="mandatory"><b>Employee Id </b></label>
+                            <input type="text" #UsernameInput placeholder="Enter EmployeeId" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                            />
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback text-danger err-msg">
+                                <div *ngIf="f.username.errors.required ">EmployeeId is required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-field">
+                        <div class="form-group">
+                            <label for="password" class="mandatory"> <b>Password </b></label>
+                            <input type="password" #PasswordInput placeholder="Enter Password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                            />
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-danger err-msg">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-field text-center">
+                        <button [disabled]="loading" class="btn btnlogin">Login</button> &nbsp;&nbsp;
+                        <button (click)="clearSearchInput()" class="btn btnlogin">Clear</button>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

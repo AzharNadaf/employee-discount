@@ -1,0 +1,11 @@
+export class Login {
+    constructor(
+
+        public Username: string,
+        public Password: string,
+        public FullName :string
+    ) 
+    {
+
+    }
+}

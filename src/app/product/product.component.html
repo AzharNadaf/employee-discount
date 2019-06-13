@@ -1,0 +1,106 @@
+<app-header></app-header>
+
+<div id="popWrapp">
+  <div [hidden]="!isloadCategory" class="product section">
+    <div class="container">
+      <div class="g-section">
+        <div class="g-section-title">
+          <h3 (click)="detail()">Products Category</h3>
+        </div>
+        <div class="row">
+          <div *ngFor="let Product of listCategoryDisplay" class="col-md-3 col-sm-6 position-relative">
+            <div class="product-item">
+
+              <a class="p-img lista" (click)="onPaginationClick(Product.categoryid)" data-toggle="popover" data-content="We make STANLEY® Anti-Vibe® Hammers with the professional in mind. Made of one-piece double forged steel head and handle for swing and durability ">
+              <img [src]="Product.imagepath" class=" img-fluid" />
+            </a>
+              <div class="p-content">
+                <p class="text-center">{{ Product.categoryname }}</p>
+                <a class="m-link" data-toggle="modal" data-target="#p-dec-modal">
+  Show more
+</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div [hidden]="!isloadProduct" class="product section">
+    <div class="container">
+      <div class="g-section">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="g-section-title">
+              <h3>
+                Product List
+              </h3>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="alert alert-success text-center" *ngIf="isProductadded">Added to Cart</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div *ngFor="let Product of listProductDisplay" class=" col-md-3 col-sm-6">
+            <div class="product-item h-400">
+
+              <a class="p-img listb"  [routerLink]="['/productdetail',Product.productid]" data-toggle="popover" data-content="We make STANLEY® Anti-Vibe® Hammers with the professional in mind. Made of one-piece double forged steel head and handle for swing and durability ">
+              <img [src]="Product.imagepath " class="img-fluid" />
+            </a>
+              <div class="p-content">
+                <p>
+                  <small>Stanley</small> {{ Product.productname }}
+                </p>
+              </div>
+              <div class="p-price">
+                <h5>
+                  <small>Price</small> ${{ Product.productcost }}</h5>
+              </div>
+              <a (click)="onProductClick(Product.productid)" class="btn">Add to cart</a>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="p-dec-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Knives & Blades</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="d-flex justify-content-center align-items-center modal-img">
+                <img src="/assets/image7.jpg" alt="">
+              </div>
+            </div>
+            <div class="col-md-8">
+              <h6>FEATURES & BENEFITS</h6>
+              <ul>
+                <li>3 FT. STRAIGHTER STANDOUT* - Straighter reach than ever before</li>
+                <li>COMPACT CASE DESIGN - Less bulk and a comfortable grip, it's easier to hold and takes up less space on your
+                  tool belt**</li>
+                <li>2X MORE BLADEARMOR® COATING** - 6 in. of BladeArmor® reinforcement to help reduce breakage at the hook</li>
+                <li>MAXSHIELD™ BLADE COATING - The longest-lasting blade coating ever applied to a FATMAX® tape measure</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

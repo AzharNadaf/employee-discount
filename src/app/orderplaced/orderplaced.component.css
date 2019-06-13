@@ -1,0 +1,9 @@
+.order-statement {
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+   padding: 30px;
+   background: #fbd504;
+   margin-top: 50px;
+}

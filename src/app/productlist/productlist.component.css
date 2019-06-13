@@ -1,0 +1,23 @@
+.ul{
+    background-clip: yellow;
+    text-align:center;
+    height: 10px;
+    padding: 30px;
+}
+
+button{
+    background-color: #ffdb09;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+b div{
+    border-bottom: solid;
+    border-bottom-color: black;
+    margin-bottom: 20px;
+}

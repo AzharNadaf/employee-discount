@@ -1,0 +1,56 @@
+
+.bg-img {
+    height: 100%;
+    overflow: hidden;
+    height: 440px;
+    background-image: url(/assets/brands-header.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.login{
+     width: 100%;
+    height: calc(100vh - 50px);
+}
+.form-group {
+    position: relative;
+}
+
+.err-msg {
+    position: absolute;
+    width: 100%;
+}
+
+.err-msg p {
+    font-size: 12px;
+}
+
+
+form {
+    padding: 40px;
+    background: #000;
+    width: 100%;
+}
+
+label { color: #fff;}
+
+.btnlogin {
+    background: #fbd504;
+    border-radius: 0;
+    color: #000;
+}
+
+
+img.logo{
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+@media (max-width:498px) {
+    form {
+        padding: 20px;
+    }
+}

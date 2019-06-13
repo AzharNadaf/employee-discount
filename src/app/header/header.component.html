@@ -1,0 +1,70 @@
+<section class="header">
+    <div class="search-input" *ngIf="show_dialog">
+        <input type="text" id="search-input" class="form-control" placeholder="Type here..." />
+        <i class="material-icons" (click)="toggle()">close</i>
+    </div>
+
+    <div class="container">
+
+        <div class="top-header">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+          Welcome, {{userName}}
+        </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item d-flex align-items-center justify-content-center" href="/login"> <i class="material-icons">
+exit_to_app
+</i>Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <nav *ngIf="userName" class="navbar navbar-expand-md align-items-end">
+            <a class="navbar-brand" href="/homepage">
+        <img src="/assets/Stanley-Black-Decker-logo.png" alt="logo" class="img-fluid">
+    </a>
+
+            <div class="d-flex order-md-2">
+
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                    aria-expanded="false" aria-label="Toggle navigation">
+    <i class="material-icons">
+menu
+</i>
+  </button>
+                <ul class="navbar-nav nv-right flex-row ">
+
+                    <li class="nav-item l-brd ">
+                        <a class="nav-link" (click)="toggle()">
+                            <i class="material-icons align-middle">
+search
+</i>
+                        </a>
+                    </li>
+                    <li class="nav-item my-cart">
+                        <span class="qty">{{totalCount}}</span>
+                        <a class="nav-link" href="/mycart">
+                        
+                        <i class="material-icons">
+shopping_cart
+</i></a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/product">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/support">Support</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/newsletter">Newsletter</a></li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
